@@ -401,7 +401,7 @@ onUnmounted(() => {
 .character-head {
   position: absolute;
   top: 212px;
-  left: -202px;
+  left: -02px;
   width: 753px;
   height: 1065px;
   opacity: 0;

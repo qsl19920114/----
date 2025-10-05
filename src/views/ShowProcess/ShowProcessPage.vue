@@ -95,8 +95,8 @@ const handleNextClick = () => {
   // 保存表演完成状态
   localStorage.setItem('showProcessCompleted', 'true');
   
-  // 跳转到下一个页面（待定）
-  router.push('/process');
+  // 跳转到配乐页面
+  router.push('/music');
 };
 
 onMounted(() => {

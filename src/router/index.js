@@ -35,6 +35,12 @@ import DragAssemble from '../views/Drag/DragAssemblePage.vue';
 import DragComplete from '../views/Drag/DragCompletePage.vue';
 import ZhuiJie from '../views/ZhuiJie/ZhuiJiePage.vue';
 import ShowProcess from '../views/ShowProcess/ShowProcessPage.vue';
+import MusicPage from '../views/MusicPage.vue';
+import UserHomePage from '../views/Users/UserHomePage.vue';
+import UserGeneratePage from '../views/Users/UserGeneratePage.vue';
+import UserAssemblePage from '../views/Users/UserAssemblePage.vue';
+import UserCompletePage from '../views/Users/UserCompletePage.vue';
+import UserVideoGeneratePage from '../views/Users/UserVideoGeneratePage.vue';
 
 const routes = [
   {
@@ -324,6 +330,54 @@ const routes = [
     component: ShowProcess,
     meta: {
       title: '智绘皮影 - 表演'
+    }
+  },
+  {
+    path: '/music',
+    name: 'MusicPage',
+    component: MusicPage,
+    meta: {
+      title: '智绘皮影 - 配乐'
+    }
+  },
+  {
+    path: '/user-home',
+    name: 'UserHome',
+    component: UserHomePage,
+    meta: {
+      title: '智绘皮影 - 用户创作'
+    }
+  },
+  {
+    path: '/user-generate',
+    name: 'UserGenerate',
+    component: UserGeneratePage,
+    meta: {
+      title: '智绘皮影 - 生成结果'
+    }
+  },
+  {
+    path: '/user-assemble',
+    name: 'UserAssemble',
+    component: UserAssemblePage,
+    meta: {
+      title: '智绘皮影 - 组装人物'
+    }
+  },
+  {
+    path: '/user-complete',
+    name: 'UserComplete',
+    component: UserCompletePage,
+    meta: {
+      title: '智绘皮影 - 完成创作'
+    }
+  },
+  {
+    path: '/user-video',
+    name: 'UserVideoGenerate',
+    component: UserVideoGeneratePage,
+    meta: {
+      title: '智绘皮影 - 生成表演视频'
     }
   }
 ];
