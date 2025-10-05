@@ -1,0 +1,21 @@
+
+  import React, { useEffect, useState } from "react";
+
+  
+
+  export type IGeneratedComponent = {
+    
+    
+    
+  }
+
+  export default function GeneratedComponent (props: IGeneratedComponent) {
+
+    
+
+
+    return (<div className="w-[786px] h-[1764px] overflow-hidden box-border bg-[linear-gradient(0deg,_rgba(160,_45,_24,_1)_33.65%,_rgba(239,_239,_241,_1)_100.00%)] relative" ><div className="w-[578px] opacity-[0.12] box-border min-h-[574px] absolute top-[312px] left-[100px]" ></div><div className="w-[1234px] h-[1772px] box-border absolute top-[8px] -left-[292px] flex flex-col justify-start items-start" ><div className="w-[786px] h-[1425.06px] mt-[8px] ml-[292px] relative" ><div className="w-[786px] h-[1346px] box-border bg-[linear-gradient(0deg,_rgba(255,_255,_255,_0.22)_0.00%,_rgba(255,_255,_255,_0)_100.00%)] absolute top-0 left-0 flex flex-col justify-start items-center" ><div className="w-[786px] h-[264px] relative" ><img src={'assets/17891596-ec53-42ef-bf32-e7f5b77cad89.png'} className="w-[780px] h-[264px] absolute top-0 left-[4px]"   /><div className="w-[786px] h-[98px] box-border flex flex-col flex-nowrap pt-[42px] absolute top-0 left-0" ><div className="w-[786px] box-border flex h-[44px] flex-row flex-nowrap justify-between items-center" ><div className="w-[786px] h-[44px] flex justify-start items-center" ><div className="w-[269px] box-border flex h-[44px] flex-row flex-nowrap justify-center items-center pr-[12px] pl-[32px]" ><div className="font-[SF_Pro] text-[34px] whitespace-nowrap text-center text-[rgba(0,0,0,1)] leading-[44px] font-[590]" ><span className="text-[34px]">9:41</span></div></div><div className="w-[248px] box-border min-h-[20px] flex h-[20px] flex-row flex-nowrap justify-center items-center" ></div><div className="w-[269px] box-border flex h-[26px] flex-row flex-nowrap justify-center items-center pr-[32px] pl-[12px]" ><div className="w-[155.34px] h-[26px] flex justify-start items-start" ><img src={'assets/36c674fa-f05d-4efa-8141-07ad0efa62dc.png'} className="w-[38.40px] h-[24.46px] mt-[0.78px]"   /><img src={'assets/fc714c5f-5ec0-4402-8006-25ecf07167f4.png'} className="w-[34.28px] h-[24.66px] mt-[0.68px] ml-[14px]"   /><img src={'assets/03fcb944-541e-45cc-bc2f-14ce81bb912d.png'} className="w-[54.66px] h-[26px] ml-[14px]"   /></div></div></div></div></div></div><div className="mt-[58px] flex flex-col justify-end items-end w-[522px] h-[522px] bg-[url('assets/b418707e-df02-485f-b3af-6903c6d80b7d.png')] [background-size:100%_100%] bg-no-repeat" ><div className="w-[484px] h-[482px] box-border mb-[14px] mr-[18px] relative" ><img src={'assets/dd6a1711-1afb-4bee-8eac-4efc3fcbf1c7.png'} className="w-[484px] h-[482px] absolute top-0 left-0"   /><div className="absolute top-[90px] left-[202px] w-[100px] h-[274px] font-[KingHwa_OldSong] text-[64px] text-[rgba(255,255,255,1)] leading-[normal] font-normal" ><span className="text-[64px]">历史渊源</span></div></div></div></div><div className="absolute top-[894px] left-[132px] w-[522px] h-[522px] bg-[url('assets/7aad390d-1b87-40fb-9e86-64467c3d3956.png')] [background-size:100%_100%] bg-no-repeat" ><div className="absolute top-[108px] left-[232px] w-[100px] h-[414px] font-[KingHwa_OldSong] text-[64px] text-[rgba(255,255,255,1)] leading-[normal] font-normal" ><span className="text-[64px]">创作过程</span></div><div className="w-[484px] h-[482px] box-border absolute top-[30px] left-[20px] flex justify-center items-center" ><img src={'assets/4e6b0161-e116-46c6-8152-48654d9fae9f.png'} className="w-[484px] h-[482px]"   /></div></div><div className="absolute top-[446px] left-[86px] w-[377.52px] h-[979.06px] rotate-[89.8375581215239deg] font-[KingHwa_OldSong] text-[24px] text-[rgba(226,213,197,1)] leading-[normal] font-normal" ><span className="text-[24px]">Historical&nbsp;Origin</span></div></div><img src={'assets/33d272f1-4ded-445e-893b-87c0d0f08ef9.png'} className="w-[780px] h-[274px] mt-[64.94px] ml-[296px]"   /></div><div className="absolute top-[1022px] left-[86px] w-[377.52px] h-[979.06px] rotate-[89.8375581215239deg] font-[KingHwa_OldSong] text-[24px] text-[rgba(226,213,197,1)] leading-[normal] font-normal" ><span className="text-[24px]">Creative&nbsp;Process</span></div></div>)
+  };
+
+  
+  

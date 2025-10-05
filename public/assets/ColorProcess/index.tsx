@@ -1,0 +1,21 @@
+
+  import React, { useEffect, useState } from "react";
+
+  
+
+  export type IGeneratedComponent = {
+    
+    
+    
+  }
+
+  export default function GeneratedComponent (props: IGeneratedComponent) {
+
+    
+
+
+    return (<div className="w-[786px] h-[1704px] overflow-hidden box-border bg-[rgba(226,_213,_197,_1)] flex justify-center items-center" ><div className="flex flex-col justify-start items-center w-[786px] h-[1704px] bg-[url('assets/83cc71fc-8518-4ecd-985c-0d8b5640d966.png')] [background-size:100%_100%] bg-no-repeat" ><div className="w-[786px] h-[98px] box-border flex flex-col flex-nowrap pt-[42px]" ><div className="w-[786px] box-border flex h-[44px] flex-row flex-nowrap justify-between items-center" ><div className="w-[786px] h-[44px] flex justify-start items-center" ><div className="w-[269px] box-border flex h-[44px] flex-row flex-nowrap justify-center items-center pr-[12px] pl-[32px]" ><div className="font-[SF_Pro] text-[34px] whitespace-nowrap text-center text-[rgba(0,0,0,1)] leading-[44px] font-[590]" ><span className="text-[34px]">9:41</span></div></div><div className="w-[248px] box-border min-h-[20px] flex h-[20px] flex-row flex-nowrap justify-center items-center" ></div><div className="w-[269px] box-border flex h-[26px] flex-row flex-nowrap justify-center items-center pr-[32px] pl-[12px]" ><div className="w-[155.34px] h-[26px] flex justify-start items-center" ><img src={'assets/7cab5460-0ac2-4f30-b94a-05a4f60222e6.png'} className="w-[38.40px] h-[24.46px]"   /><img src={'assets/b6c88073-7ed2-4be3-b468-de009210eeb9.png'} className="w-[34.28px] h-[24.66px] ml-[14px]"   /><img src={'assets/1e3d1337-5402-424b-9f76-b195994ccd81.png'} className="w-[54.66px] h-[26px] ml-[14px]"   /></div></div></div></div></div><div className="w-[786px] h-[1578px] mt-[28px] relative" ><div className="w-[734px] box-border bg-[rgba(255,_255,_255,_1)] min-h-[1118px] absolute top-[170px] left-[26px]" ></div><div className="w-[734px] h-[1118px] box-border bg-[rgba(255,_255,_255,_0.5)] absolute top-[122px] left-[52px] flex flex-col justify-end items-start" ><img src={'assets/15969324-c316-4287-a059-0891c5f40f7b.png'} className="w-[128px] h-[128px] ml-[20px] mb-[30px]"   /></div><img src={'assets/18f22b8d-a6ad-4843-9382-6b15eaeb9bba.png'} className="w-[128px] h-[128px] absolute top-[1398px] left-[72px]"   /><img src={'assets/7f536207-23cb-4444-b16a-c7ae91933a01.png'} className="w-[128px] h-[128px] absolute top-[1240px] left-[72px]"   /><img src={'assets/abeed70d-4901-45fa-a3c9-bb9bb2701f73.png'} className="w-[174.60px] h-[200.22px] absolute top-[1204.44px] left-[58px]"   /><img src={'assets/70ee0414-603c-4917-90ed-5d5f65e66308.png'} className="w-[246.42px] h-[239.28px] absolute top-[1022px] left-[8px]"   /><img src={'assets/e6e540d6-9e31-48c4-a84b-ca6ba8fac612.png'} className="w-[170px] h-[215.56px] absolute top-[1362.44px] left-[44px]"   /><div className="absolute top-[276px] left-0 flex justify-start items-start w-[786px] h-[1302px] bg-[url('assets/92afde34-cfc1-41d1-a581-7ccce52937a0.png')] [background-size:100%_100%] bg-no-repeat" ><img src={'assets/b79179a9-d2bb-431d-94e9-3c10b74a5cc7.png'} className="w-[34px] h-[34px] mt-[852px] ml-[392px]"   /><div className="mt-[844px] ml-[12px] font-[KingHwa_OldSong] text-[40px] whitespace-nowrap text-[rgba(100,70,63,1)] leading-[normal] font-normal flex-shrink-0" ><span className="text-[40px]">拖动颜料到皮影</span></div></div><div className="absolute top-0 left-[626px] w-[100px] h-[274px] font-[KingHwa_OldSong] text-[96px] text-[rgba(100,70,63,1)] leading-[normal] font-normal" ><span className="text-[96px]">敷彩</span></div><div className="absolute top-[18px] left-[382px] w-[377.52px] h-[979.06px] rotate-[89.8375581215239deg] font-[KingHwa_OldSong] text-[24px] text-[rgba(160,45,24,1)] leading-[normal] font-normal" ><span className="text-[24px]">Coloring&nbsp;Shadow&nbsp;Puppets</span></div><div className="absolute top-[18px] left-[382px] w-[377.52px] h-[979.06px] rotate-[89.8375581215239deg] font-[KingHwa_OldSong] text-[24px] text-[rgba(160,45,24,1)] leading-[normal] font-normal" ><span className="text-[24px]">Coloring&nbsp;Shadow&nbsp;Puppets</span></div></div></div></div>)
+  };
+
+  
+  
