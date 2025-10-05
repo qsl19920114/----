@@ -131,7 +131,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   background-image: url('/assets/29115b2b-97a4-4c7f-b905-a52f200dd6ca.png');
-  background-size: 100% 100%;
+  background-size: 190% 200%;
   background-repeat: no-repeat;
 }
 
@@ -258,8 +258,8 @@ onUnmounted(() => {
   position: absolute;
   top: 336px;
   left: -107px;
-  width: 163px;
-  height: 467px;
+  width: 143px;
+  height: 297px;
   transform: rotate(89.8375581215239deg);
   font-family: 'KingHwa OldSong', 'KingHwa_OldSong', serif;
   font-size: 11px;
