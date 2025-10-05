@@ -290,7 +290,7 @@ onUnmounted(() => {
 /* 祥云容器 */
 .cloud-container {
   position: absolute;
-  top: -105px;
+  top: 205px;
   left: -8px;
   width: 401px;
   height: 535px;

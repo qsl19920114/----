@@ -64,6 +64,9 @@
     <!-- 右手 -->
     <div class="part-right-hand"></div>
 
+    <!-- 头部 -->
+    <div class="part-head"></div>
+
     <!-- 雕刻标题 -->
     <div class="page-title">雕刻</div>
 
@@ -286,12 +289,12 @@ onUnmounted(() => {
   position: absolute;
   width: 454.9px;
   height: 643.4px;
-  left: -43.36px;
+  left: -53.36px;
   top: 112.11px;
   background: url('/assets/CraveProcess/assets/左.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  transform: rotate(-1.01deg);
+  transform: rotate(15.01deg);
   z-index: 3;
 }
 
@@ -314,8 +317,8 @@ onUnmounted(() => {
   position: absolute;
   width: 449.93px;
   height: 636.36px;
-  left: -116.81px;
-  top: -46.26px;
+  left: -126.81px;
+  top: 66.26px;
   background: url('/assets/CraveProcess/assets/左手.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -328,7 +331,7 @@ onUnmounted(() => {
   position: absolute;
   width: 450.24px;
   height: 636.81px;
-  left: -191px;
+  left: -1px;
   top: 14.46px;
   background: url('/assets/CraveProcess/assets/右臂.png');
   background-size: 100% 100%;
@@ -342,12 +345,12 @@ onUnmounted(() => {
   position: absolute;
   width: 449.93px;
   height: 636.36px;
-  left: -214.26px;
-  top: 62.76px;
+  left: 5.26px;
+  top: 100.76px;
   background: url('/assets/CraveProcess/assets/右.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  transform: rotate(-19.28deg);
+  transform: rotate(-1.5deg);
   z-index: 7;
 }
 
@@ -370,8 +373,8 @@ onUnmounted(() => {
   position: absolute;
   width: 449.93px;
   height: 636.36px;
-  left: -191.08px;
-  top: -74px;
+  left: -90.08px;
+  top: 70px;
   background: url('/assets/CraveProcess/assets/左臂.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -384,13 +387,27 @@ onUnmounted(() => {
   position: absolute;
   width: 449.93px;
   height: 636.36px;
-  left: -259px;
-  top: 87.06px;
+  left: 89px;
+  top: 7.06px;
   background: url('/assets/CraveProcess/assets/右手.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   transform: rotate(56.9deg);
   z-index: 10;
+}
+
+/* 头部 */
+.part-head {
+  position: absolute;
+  width: 449.93px;
+  height: 636.36px;
+  left: -0px;
+  top: 40px;
+  background: url('/assets/CraveProcess/assets/头.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transform: rotate(-2deg);
+  z-index: 11;
 }
 
 /* 雕刻 */
@@ -416,7 +433,7 @@ onUnmounted(() => {
   position: absolute;
   width: 489px;
   height: 187.38px;
-  left: 191px;
+  left: 381px;
   top: 72px;
   font-family: 'KingHwa_OldSong', 'KingHwa OldSong', serif;
   font-style: normal;

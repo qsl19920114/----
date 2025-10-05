@@ -307,7 +307,7 @@ onUnmounted(() => {
 .page-title {
   position: absolute;
   top: 0;
-  right: 80px;
+  right: 50px;
   width: 50px;
   height: 137px;
   font-family: 'KingHwa_OldSong', 'KingHwa OldSong', serif;
@@ -324,7 +324,7 @@ onUnmounted(() => {
 .subtitle-text {
   position: absolute;
   top: 9px;
-  left: 191px;
+  left: 361px;
   width: 189px;
   height: 489.53px;
   transform: rotate(89.84deg);

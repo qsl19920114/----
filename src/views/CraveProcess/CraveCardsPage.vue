@@ -42,8 +42,7 @@
     <div class="card-head" :class="{ 'animate-in': animationStarted }">
       <div class="card-bg card-bg-head"></div>
       <img 
-        v-if="selectedImage" 
-        :src="selectedImage" 
+        src="/assets/CraveProcess/assets/头.png"
         class="card-image card-image-head" 
         alt="头部" 
       />
