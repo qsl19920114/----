@@ -23,12 +23,12 @@
 
     <!-- 返回按钮 -->
     <div class="back-button" @click="goBack">
-      <img src="/assets/zhipi/assets/assets/bd4e4c30-2c28-4da9-b8b6-30a9ee321d4d.png" alt="返回" class="back-icon" />
+      <img src="/assets/zhipi/assets/assets/3f8da683-fc98-4078-8c35-7a1e16659328.png" alt="返回" class="back-icon" />
     </div>
 
     <!-- 返回箭头装饰 -->
     <div class="back-arrow-decoration">
-      <img src="/assets/zhipi/assets/assets/3f8da683-fc98-4078-8c35-7a1e16659328.png" alt="" class="arrow-icon" />
+      <img src="/assets/zhipi/assets/assets/124b24cf-bf53-473c-ab26-373d814b965c.png" alt="" class="arrow-icon" />
     </div>
 
     <!-- 竖排标题"制皮" -->
@@ -354,9 +354,9 @@ onUnmounted(() => {
 .back-arrow-decoration {
   position: absolute;
   width: 128.21px;
-  height: 144.26px;
+  height: 72.13px;
   left: 29px;
-  top: -75px;
+  top: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -374,7 +374,7 @@ onUnmounted(() => {
   width: 41px;
   height: 41px;
   left: 21px;
-  top: 38px;
+  top: 78px;
   cursor: pointer;
   z-index: 102;
   transition: opacity 0.2s ease;
@@ -425,7 +425,7 @@ onUnmounted(() => {
 }
 
 .content-panel.expanded {
-  top: 135px;
+  top: 235px;
   height: 705px;
 }
 

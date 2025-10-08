@@ -451,7 +451,7 @@ onUnmounted(() => {
   top: 1043px;
   left: 31px;
   width: 344px;
-  height: 457px;
+  height: 618px;
   background-image: url('/assets/process/assets/24042d2a-effc-44a9-9e58-18dfd111dd2d.png');
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -518,21 +518,21 @@ onUnmounted(() => {
   margin-right: 31px;
 }
 
-/* 竖排标题"创作过程" */
+/* 横排居中标题"创作过程" */
 .page-title-vertical {
   position: absolute;
-  top: 70px;
-  left: 34px;
-  width: 48px;
-  height: 198px;
+  top: 150px; /* 下移50px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
   font-family: 'KingHwa OldSong', 'KingHwa_OldSong', serif;
-  font-size: 46px;
+  font-size: 40px;
   color: rgba(100, 70, 63, 1);
   line-height: normal;
   font-weight: normal;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
   letter-spacing: 4px;
+  white-space: nowrap;
 }
 
 /* 底部装饰 */

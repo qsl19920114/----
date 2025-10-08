@@ -326,7 +326,7 @@ onUnmounted(() => {
 .decoration-layer {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100px;
   width: 393px;
   height: 803px;
   z-index: 8;
@@ -372,7 +372,7 @@ onUnmounted(() => {
 .decoration-1 {
   position: absolute;
   top: 508px;
-  left: 99.5px;
+  left: 80.5px;
   width: 123.21px;
   height: 119.64px;
 }

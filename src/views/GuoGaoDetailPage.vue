@@ -398,7 +398,7 @@ onUnmounted(() => {
   width: 128.21px;
   height: 185.13px;
   left: 29px;
-  top: -113px;
+  top: 38px;
   z-index: 101;
 }
 
@@ -408,7 +408,7 @@ onUnmounted(() => {
   width: 20.09px;
   height: 29.01px;
   left: 0px;
-  top: 156.12px;
+  top: 40px;
 }
 
 .arrow-left {
@@ -439,7 +439,7 @@ onUnmounted(() => {
   width: 41px;
   height: 41px;
   left: 21px;
-  top: 38px;
+  top: 78px;
   background: rgba(100, 70, 63, 0.4);
   border-radius: 50%;
   cursor: pointer;
@@ -470,7 +470,7 @@ onUnmounted(() => {
 }
 
 .content-panel.expanded {
-  top: 135px;
+  top: 235px;
   height: 705px;
 }
 

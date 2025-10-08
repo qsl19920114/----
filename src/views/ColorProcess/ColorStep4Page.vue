@@ -93,7 +93,7 @@
 
       <!-- 提示文字和箭头 -->
       <div class="hint-container">
-        <div class="hint-text">拖动画笔到皮影</div>
+        <div class="hint-text">拖动熨斗到皮影</div>
         <img 
           src="/assets/ColorProcess/step4/assets/ecbdd77f-c11e-491c-a486-bc3494fb283d.png" 
           alt="箭头" 
@@ -442,8 +442,8 @@ onUnmounted(() => {
 /* 提示容器 */
 .hint-container {
   position: absolute;
-  top: 692px;
-  left: 5px;
+  top: 712px;
+  left: 156px;
   display: flex;
   align-items: center;
   gap: 10px;

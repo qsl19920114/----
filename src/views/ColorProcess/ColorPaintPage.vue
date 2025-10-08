@@ -132,16 +132,7 @@ const updateTime = () => {
 
 // 点击返回按钮
 const handleBackClick = () => {
-  // 标记该颜料已完成，解锁下一个
-  const completedPaints = JSON.parse(localStorage.getItem('completedPaints') || '[]');
-  const currentPaintIndex = parseInt(localStorage.getItem('currentPaintIndex') || '0');
-  
-  if (!completedPaints.includes(currentPaintIndex)) {
-    completedPaints.push(currentPaintIndex);
-    localStorage.setItem('completedPaints', JSON.stringify(completedPaints));
-  }
-  
-  // 跳转到第二步
+  // 跳转到敷彩第二步
   router.push('/color-step2');
 };
 
@@ -362,7 +353,7 @@ onUnmounted(() => {
 /* 返回按钮容器 */
 .back-button-wrapper {
   position: absolute;
-  top: 34px;
+  top: 78px;
   left: 256px;
   width: 56px;
   height: 56px;
@@ -407,7 +398,7 @@ onUnmounted(() => {
 .decoration-layer {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100px;
   width: 393px;
   height: 803px;
   z-index: 8;

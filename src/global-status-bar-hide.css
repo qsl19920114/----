@@ -1,0 +1,14 @@
+/* 全局隐藏所有状态栏 */
+.status-bar {
+  display: none !important;
+}
+
+/* 确保隐藏所有状态栏相关元素 */
+.status-bar-frame,
+.status-bar-content,
+.status-bar-inner,
+.status-bar-left,
+.status-bar-center,
+.status-bar-right {
+  display: none !important;
+}

@@ -3,13 +3,13 @@
     <div class="content-wrapper">
       <div class="main-content">
         <!-- 背景装饰图 -->
-        <img src="/assets/b29ba3c3-f311-4184-b6b7-cd0901301fc0.png" class="bg-image-1" alt="" />
-        <img src="/assets/5af59429-d714-4359-8fce-0abd94ef81b4.png" class="bg-image-2" alt="" />
-        <img src="/assets/21295c72-0b34-4806-8cbb-7422114eef2a.png" class="bg-image-3" alt="" />
+        <img src="/assets/b29ba3c3-f311-4184-b6b7-cd0901301fc0.png" class="bg-image-1" alt=""  style="width: 283.5px; height: 527.4px;" />
+        <img src="/assets/5af59429-d714-4359-8fce-0abd94ef81b4.png" class="bg-image-2" alt="" style="width: 283.5px; height: 527.4px;" />
+        <img src="/assets/21295c72-0b34-4806-8cbb-7422114eef2a.png" class="bg-image-3" alt="" style="transform: scale(0.9) translateX(10px) translateY(-40px); transform-origin: top left;" />
         
         <!-- 标题文字（竖排） -->
-        <div class="title-text">
-          <span>智绘皮影，让传统在指尖新生</span>
+        <div class="title-text" style="top: 49px;">
+          <span>借 AI 之笔，唤醒千年光影艺术</span>
         </div>
         
         <!-- 英文副标题 -->
@@ -44,13 +44,12 @@
         </div>
       </div>
       
-      <!-- Logo -->
-      <img src="/assets/5ae2c174-bb8a-4868-a104-52a454979561.png" class="logo-image" alt="智绘皮影 Logo" />
+
       
       <!-- 点击开启按钮 -->
-      <div class="button-wrapper" @click="startExperience">
+      <div class="button-wrapper" @click="startExperience" style="margin-top: 5px;">
         <img src="/assets/aa5cd602-2c4d-438e-be4c-d0b4e8037055.png" class="button-bg" alt="" />
-        <div class="button-text">
+        <div class="button-text" style="top: -20px; left: 105px;">
           <span>点击开启</span>
         </div>
       </div>

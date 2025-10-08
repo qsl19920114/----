@@ -363,7 +363,7 @@ onUnmounted(() => {
   width: 128.21px;
   height: 144.26px;
   left: 29px;
-  top: -75px;
+  top: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -381,7 +381,7 @@ onUnmounted(() => {
   width: 41px;
   height: 41px;
   left: 21px;
-  top: 38px;
+  top: 78px;
   cursor: pointer;
   z-index: 102;
   transition: opacity 0.2s ease;
@@ -401,7 +401,7 @@ onUnmounted(() => {
   position: absolute;
   width: 325px;
   left: 32px;
-  top: 413px;
+  top: 470px;
   height: 640px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 60;
@@ -415,7 +415,7 @@ onUnmounted(() => {
 }
 
 .content-panel.expanded {
-  top: 135px;
+  top: 235px;
   height: 705px;
 }
 
@@ -425,7 +425,7 @@ onUnmounted(() => {
   width: 99px;
   height: 7.8px;
   left: calc(50% - 99px/2);
-  top: 412px;
+  top: 7.8px;
   background: #A02D18;
   border-radius: 13px;
   z-index: 65;
@@ -455,17 +455,16 @@ onUnmounted(() => {
 .content-background {
   position: absolute;
   width: 325px;
-  height: 397px;
+  height: 601px;
   left: calc(50% - 325px/2);
-  top: 239px;
+  top: 0;
   background: #D9D9D9;
   opacity: 0.5;
   border-radius: 48px;
-  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1), top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content-panel.expanded .content-background {
-  top: 0;
   height: 705px;
 }
 

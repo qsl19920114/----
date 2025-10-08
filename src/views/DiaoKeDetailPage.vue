@@ -363,7 +363,7 @@ onUnmounted(() => {
   width: 128.21px;
   height: 72.13px;
   left: 29px;
-  top: 0px;
+  top: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -381,7 +381,7 @@ onUnmounted(() => {
   width: 41px;
   height: 41px;
   left: 21px;
-  top: 38px;
+  top: 78px;
   cursor: pointer;
   z-index: 102;
   transition: opacity 0.2s ease;
@@ -415,7 +415,7 @@ onUnmounted(() => {
 }
 
 .content-panel.expanded {
-  top: 135px;
+  top: 235px;
   height: 705px;
 }
 

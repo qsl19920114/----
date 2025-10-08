@@ -142,11 +142,28 @@ const checkScroll = () => {
   canScrollLeft.value = container.scrollLeft > 10;
   canScrollRight.value = container.scrollLeft < container.scrollWidth - container.clientWidth - 10;
   
-  // 计算当前中心的卡片索引（卡片宽度307px + 间距61px = 368px）
-  const cardWidth = 368;
-  const scrollCenter = container.scrollLeft + container.clientWidth / 2;
-  const newCenterIndex = Math.round(scrollCenter / cardWidth);
-  centerIndex.value = Math.min(Math.max(0, newCenterIndex), imageList.value.length - 1);
+  // 计算当前中心的卡片索引
+  const cardWidth = 337; // 卡片宽度307px + 间距30px
+  const containerWidth = 350; // 容器宽度
+  const containerCenter = containerWidth / 2; // 容器中心点
+  
+  // 当前滚动位置的中心点
+  const currentCenter = container.scrollLeft + containerCenter;
+  
+  // 找到最接近中心的卡片索引
+  let newCenterIndex = 0;
+  let minDistance = Infinity;
+  
+  for (let i = 0; i < imageList.value.length; i++) {
+    const cardCenter = i * cardWidth + 307 / 2; // 卡片中心点
+    const distance = Math.abs(currentCenter - cardCenter);
+    if (distance < minDistance) {
+      minDistance = distance;
+      newCenterIndex = i;
+    }
+  }
+  
+  centerIndex.value = newCenterIndex;
 };
 
 // 选择图片
@@ -159,11 +176,17 @@ const selectImage = (index) => {
 const scrollToIndex = (index) => {
   if (!scrollWrapper.value) return;
   
-  const cardWidth = 368; // 卡片宽度307px + 间距61px
-  const targetScroll = index * cardWidth;
+  const cardWidth = 337; // 卡片宽度307px + 间距30px
+  const containerWidth = 350; // 容器宽度
+  
+  // 计算目标滚动位置：让指定卡片居中显示
+  // 卡片中心位置 - 容器中心位置 = 滚动偏移
+  const cardCenter = index * cardWidth + 307 / 2; // 卡片中心点
+  const containerCenter = containerWidth / 2; // 容器中心点
+  const targetScroll = cardCenter - containerCenter;
   
   scrollWrapper.value.scrollTo({
-    left: targetScroll,
+    left: Math.max(0, targetScroll), // 确保不会滚动到负值
     behavior: 'smooth'
   });
   
@@ -478,7 +501,7 @@ onUnmounted(() => {
   left: 0px;
   top: 0px;
   display: flex;
-  gap: 61px;
+  gap: 30px;
 }
 
 /* 图片卡片 */
@@ -627,7 +650,7 @@ onUnmounted(() => {
 /* 滚动指示器 */
 .scroll-indicator {
   position: absolute;
-  bottom: 85px;
+  bottom: 163px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

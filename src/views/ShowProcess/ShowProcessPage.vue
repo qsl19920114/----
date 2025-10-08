@@ -60,9 +60,9 @@
         class="bottom-decoration"
       />
 
-      <!-- 下一步按钮 -->
+      <!-- 完成体验按钮 -->
       <div class="next-button" @click="handleNextClick">
-        <span class="next-button-text">下一步</span>
+        <span class="next-button-text">完成体验，开始创作</span>
       </div>
     </div>
   </div>
@@ -90,13 +90,13 @@ const updateTime = () => {
   currentTime.value = getCurrentTime();
 };
 
-// 点击下一步按钮
+// 点击完成体验按钮
 const handleNextClick = () => {
   // 保存表演完成状态
   localStorage.setItem('showProcessCompleted', 'true');
   
-  // 跳转到配乐页面
-  router.push('/music');
+  // 跳转到用户创作页面
+  router.push('/user-home');
 };
 
 onMounted(() => {
