@@ -319,7 +319,7 @@ const handleDrop = (event) => {
   draggedItem.value = null;
 };
 
-// 放置部件 - 简化为拖到右侧即可
+// 放置部件 - 拖到参考图区域即跳转
 const placePart = (data) => {
   const { part, index, column } = data;
   
@@ -343,8 +343,10 @@ const placePart = (data) => {
     }
   });
   
-  // 检查是否所有部件都已放置
-  checkAllPartsPlaced();
+  // 直接跳转到完成页面
+  setTimeout(() => {
+    router.push('/drag-complete');
+  }, 300); // 短暂延迟以显示放置动画
 };
 
 // 检查所有部件是否都已放置

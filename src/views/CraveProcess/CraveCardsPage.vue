@@ -327,7 +327,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
+  top: -45px;
   object-fit: cover;
   object-position: center;
   transform: rotate(-1deg);
@@ -363,7 +363,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
+  top: 45px;
   object-fit: cover;
   object-position: center;
   transform: rotate(0deg);
@@ -399,7 +399,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
+  top: 45px;
   object-fit: cover;
   object-position: center;
   transform: rotate(5deg);
@@ -435,7 +435,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
+  top: 45px ;
   object-fit: cover;
   object-position: center;
   transform: rotate(-1.5deg);
@@ -506,8 +506,8 @@ onUnmounted(() => {
 .card-image-right-leg {
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
+  left: -20px;
+  top: -45px;
   object-fit: cover;
   object-position: center;
   transform: rotate(-3deg);

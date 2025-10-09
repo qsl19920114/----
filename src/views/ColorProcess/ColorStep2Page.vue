@@ -285,7 +285,7 @@ onUnmounted(() => {
 .subtitle-text {
   position: absolute;
   top: 9px;
-  left: 191px;
+  left: 351px;
   width: 189px;
   height: 489.53px;
   transform: rotate(89.84deg);
