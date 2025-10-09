@@ -111,6 +111,15 @@
             class="placed-part-image"
           />
         </div>
+        
+        <!-- 完成时的整体造型高亮效果 -->
+        <div 
+          v-if="isAllPartsPlaced" 
+          class="complete-shape-overlay"
+        >
+          <div class="completion-glow"></div>
+          <div class="completion-text">拼装完成！</div>
+        </div>
       </div>
 
       <!-- 提示文字 -->
@@ -148,19 +157,64 @@ const updateTime = () => {
 
 // 左侧第一列部件
 const leftColumnParts = ref([
-  { name: '头部', image: '/assets/Drag/assets/5b6f8f27-b5f0-4a4c-8a89-69d0e5fc6a44.png', placed: false, dragging: false },
-  { name: '左腿', image: '/assets/Drag/assets/5c001640-3641-4f1a-a96c-3f6925eefd54.png', placed: false, dragging: false },
-  { name: '躯干', image: '/assets/Drag/assets/dd05c32f-4bf7-44d1-8b36-95d73eac7ca7.png', placed: false, dragging: false },
-  { name: '左手', image: '/assets/Drag/assets/fafb337e-68df-4cb8-beee-1bad33dd4d2a.png', placed: false, dragging: false },
+  { 
+    name: '头部', 
+    image: '/assets/Drag/assets/5b6f8f27-b5f0-4a4c-8a89-69d0e5fc6a44.png', 
+    placed: false, 
+    dragging: false
+  },
+  { 
+    name: '左腿', 
+    image: '/assets/Drag/assets/5c001640-3641-4f1a-a96c-3f6925eefd54.png', 
+    placed: false, 
+    dragging: false
+  },
+  { 
+    name: '躯干', 
+    image: '/assets/Drag/assets/dd05c32f-4bf7-44d1-8b36-95d73eac7ca7.png', 
+    placed: false, 
+    dragging: false
+  },
+  { 
+    name: '左手', 
+    image: '/assets/Drag/assets/fafb337e-68df-4cb8-beee-1bad33dd4d2a.png', 
+    placed: false, 
+    dragging: false
+  },
 ]);
 
 // 右侧第二列部件
 const rightColumnParts = ref([
-  { name: '右臂', image: '/assets/Drag/assets/603ccd2f-1c37-42ff-a5cd-a1d877b5fce4.png', placed: false, dragging: false },
-  { name: '右腿', image: '/assets/Drag/assets/649d3f64-6996-4442-99ce-41b7ec366da5.png', placed: false, dragging: false },
-  { name: '盆骨', image: '/assets/Drag/assets/00635eda-6e9c-440d-943d-946f7a975d5b.png', placed: false, dragging: false },
-  { name: '左臂', image: '/assets/Drag/assets/cb85916f-36d4-4d25-8e9e-ed54bba32854.png', placed: false, dragging: false },
-  { name: '右手', image: '/assets/Drag/assets/469fb73d-9e49-42c3-8b64-ec8460411f98.png', placed: false, dragging: false },
+  { 
+    name: '右臂', 
+    image: '/assets/Drag/assets/603ccd2f-1c37-42ff-a5cd-a1d877b5fce4.png', 
+    placed: false, 
+    dragging: false
+  },
+  { 
+    name: '右腿', 
+    image: '/assets/Drag/assets/649d3f64-6996-4442-99ce-41b7ec366da5.png', 
+    placed: false, 
+    dragging: false
+  },
+  { 
+    name: '盆骨', 
+    image: '/assets/Drag/assets/00635eda-6e9c-440d-943d-946f7a975d5b.png', 
+    placed: false, 
+    dragging: false
+  },
+  { 
+    name: '左臂', 
+    image: '/assets/Drag/assets/cb85916f-36d4-4d25-8e9e-ed54bba32854.png', 
+    placed: false, 
+    dragging: false
+  },
+  { 
+    name: '右手', 
+    image: '/assets/Drag/assets/469fb73d-9e49-42c3-8b64-ec8460411f98.png', 
+    placed: false, 
+    dragging: false
+  },
 ]);
 
 // 已放置的部件
@@ -260,33 +314,70 @@ const handleDrop = (event) => {
   ) {
     placePart(data);
   }
+  
+  // 清除拖拽状态
+  draggedItem.value = null;
 };
 
-// 放置部件 - 拖动任意一个组件就直接跳转到完成页面
+// 放置部件 - 简化为拖到右侧即可
 const placePart = (data) => {
   const { part, index, column } = data;
   
   // 标记为已放置
   part.placed = true;
   
-  // 添加到已放置列表
-  const randomX = Math.random() * 100 - 50;
-  const randomY = Math.random() * 100 - 50;
+  // 添加到已放置列表，使用随机位置
+  const randomX = Math.random() * 200 + 50;
+  const randomY = Math.random() * 300 + 50;
   
   placedParts.value.push({
     name: part.name,
     image: part.image,
     style: {
-      transform: `translate(${randomX}px, ${randomY}px)`,
-      opacity: 0.8
+      position: 'absolute',
+      left: `${randomX}px`,
+      top: `${randomY}px`,
+      transform: 'translate(-50%, -50%)',
+      opacity: 1,
+      zIndex: 10
     }
   });
   
-  // 延迟200毫秒后跳转到完成页面，让用户看到放置动画
+  // 检查是否所有部件都已放置
+  checkAllPartsPlaced();
+};
+
+// 检查所有部件是否都已放置
+const checkAllPartsPlaced = () => {
+  const allLeftPlaced = leftColumnParts.value.every(part => part.placed);
+  const allRightPlaced = rightColumnParts.value.every(part => part.placed);
+  
+  if (allLeftPlaced && allRightPlaced) {
+    // 所有部件都已放置，更新状态并显示完整造型
+    isAllPartsPlaced.value = true;
+    showCompleteShape();
+  }
+};
+
+// 显示完整造型
+const showCompleteShape = () => {
+  // 添加完整造型显示的动画效果
+  const completeShape = document.querySelector('.reference-image');
+  if (completeShape) {
+    completeShape.style.opacity = '1';
+    completeShape.style.filter = 'brightness(1.2)';
+    completeShape.style.transform = 'scale(1.05)';
+    completeShape.style.transition = 'all 0.5s ease-in-out';
+  }
+  
+  // 延迟1.5秒后跳转到完成页面，让用户欣赏完整造型
   setTimeout(() => {
     router.push('/drag-complete');
-  }, 200);
+  }, 1500);
 };
+
+// 检查是否所有部件都已放置
+const isAllPartsPlaced = ref(false);
 
 
 onMounted(() => {
@@ -641,26 +732,89 @@ onUnmounted(() => {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-/* 完成按钮容器 */
-.complete-button-wrapper {
+/* 完成时的整体造型高亮效果 */
+.complete-shape-overlay {
   position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  pointer-events: none;
+  animation: completeAppear 0.8s ease-out;
 }
 
-.complete-button {
-  padding: 12px 32px;
-  background: linear-gradient(135deg, #A02D18 0%, #64463F 100%);
-  color: white;
-  border: none;
-  border-radius: 25px;
+.completion-glow {
+  position: absolute;
+  width: 270.5px;
+  height: 400.5px;
+  left: 120px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 215, 0, 0.3) 0%,
+    rgba(255, 165, 0, 0.2) 30%,
+    rgba(160, 45, 24, 0.1) 60%,
+    transparent 100%
+  );
+  border-radius: 20px;
+  animation: completionPulse 2s ease-in-out infinite;
+}
+
+.completion-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'KingHwa_OldSong', 'KingHwa OldSong', serif;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(160, 45, 24, 0.4);
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 165, 0, 0.6),
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* 完成出现动画 */
+@keyframes completeAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 完成脉冲动画 */
+@keyframes completionPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+/* 文字发光动画 */
+@keyframes textGlow {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.8),
+      0 0 20px rgba(255, 165, 0, 0.6),
+      2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    text-shadow: 
+      0 0 20px rgba(255, 215, 0, 1),
+      0 0 30px rgba(255, 165, 0, 0.8),
+      0 0 40px rgba(255, 140, 0, 0.6),
+      2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .complete-button:hover {

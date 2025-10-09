@@ -432,7 +432,7 @@ onUnmounted(() => {
 .hint-container {
   position: absolute;
   top: 505px;
-  left: 5px;
+  left: 156px;
   display: flex;
   align-items: center;
   gap: 12px;

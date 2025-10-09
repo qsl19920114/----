@@ -324,10 +324,12 @@ onUnmounted(() => {
 }
 
 .card-image-left-leg {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
   transform: rotate(-1deg);
 }
 
@@ -358,10 +360,12 @@ onUnmounted(() => {
 }
 
 .card-image-head {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
   transform: rotate(0deg);
 }
 
@@ -392,10 +396,12 @@ onUnmounted(() => {
 }
 
 .card-image-left-hand {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
   transform: rotate(5deg);
 }
 
@@ -426,10 +432,12 @@ onUnmounted(() => {
 }
 
 .card-image-torso {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
   transform: rotate(-1.5deg);
 }
 
@@ -460,10 +468,12 @@ onUnmounted(() => {
 }
 
 .card-image-pelvis {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
   transform: rotate(2deg);
 }
 
@@ -494,10 +504,12 @@ onUnmounted(() => {
 }
 
 .card-image-right-leg {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
   transform: rotate(-3deg);
 }
 
@@ -532,11 +544,12 @@ onUnmounted(() => {
 }
 
 .card-image-left-arm {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   object-fit: cover;
+  object-position: center;
   transform: rotate(5deg);
 }
 
@@ -571,10 +584,12 @@ onUnmounted(() => {
 }
 
 .card-image-right-hand {
-  width: 170px;
-  height: 150px;
-  left: 5px;
-  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: center;
   transform: rotate(-5deg);
 }
 

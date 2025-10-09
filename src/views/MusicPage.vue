@@ -93,7 +93,7 @@
         </div>
         
         <!-- 播放控制器 -->
-        <div class="player-control" @click="togglePlay">
+        <div class="player-control" @click="handlePlayClick">
           <img 
             src="/assets/music/assets/fbce82b6-845b-4021-91f6-922d38edd364.png" 
             alt="播放按钮背景" 
@@ -106,11 +106,6 @@
             :class="{ 'playing': isPlaying }"
           />
         </div>
-      </div>
-
-      <!-- 完成按钮 -->
-      <div class="complete-button" @click="handleComplete">
-        <span class="complete-text">完成体验，开始创作</span>
       </div>
     </div>
   </div>
@@ -189,6 +184,15 @@ const togglePlay = () => {
     // 暂停音乐逻辑
     console.log('暂停播放音乐');
   }
+};
+
+// 播放按钮点击事件 - 跳转到show-process界面
+const handlePlayClick = () => {
+  // 保存配乐完成状态
+  localStorage.setItem('musicCompleted', 'true');
+  
+  // 跳转到show-process页面
+  router.push('/show-process');
 };
 
 // 完成体验，跳转到用户创作页面
@@ -393,7 +397,7 @@ onUnmounted(() => {
 /* 播放器背景 */
 .player-background {
   position: absolute;
-  top: 0;
+  top: -40px;
   left: 0;
   width: 393px;
   height: 210px;
@@ -405,7 +409,7 @@ onUnmounted(() => {
 /* 音乐选择器容器 */
 .music-selector-container {
   position: absolute;
-  top: 40px;
+  top: 0px;
   left: 0;
   width: 393px;
   height: 150px;
@@ -502,8 +506,8 @@ onUnmounted(() => {
 /* 播放图标 */
 .player-icon {
   position: absolute;
-  top: 6px;
-  left: 12px;
+  top: 26px;
+  left: 17px;
   width: 61px;
   height: 41px;
   object-fit: contain;
@@ -632,14 +636,14 @@ onUnmounted(() => {
 @keyframes scaleIn {
   0% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: translateX(-50%) scale(0.8);
   }
   60% {
-    transform: scale(1.05);
+    transform: translateX(-50%) scale(1.05);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(-50%) scale(1);
   }
 }
 

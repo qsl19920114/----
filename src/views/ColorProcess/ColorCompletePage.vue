@@ -99,6 +99,7 @@
               src="/assets/ColorProcess/complete/assets/2df11049-2d93-44a9-88ce-54dd338a5479.png" 
               alt="人物头像" 
               class="character-avatar"
+              @click="handleAvatarClick"
             />
             <!-- 右下角星星 -->
             <img 
@@ -144,13 +145,28 @@ const updateTime = () => {
   currentTime.value = getCurrentTime();
 };
 
-// 点击返回按钮（实际是进入下一步）
+// 点击返回按钮
 const handleBackClick = () => {
-  // 标记敷彩流程完成
-  localStorage.setItem('colorProcessCompleted', 'true');
+  // 返回上一页
+  router.back();
+};
+
+// 点击人物头像跳转到下一页
+const handleAvatarClick = () => {
+  // 添加点击动画效果
+  const avatar = document.querySelector('.character-avatar');
+  if (avatar) {
+    avatar.classList.add('clicked');
+    // 动画结束后移除类名
+    setTimeout(() => {
+      avatar.classList.remove('clicked');
+    }, 600);
+  }
   
-  // 进入拖拽组装页面
-  router.push('/drag-assemble');
+  // 延迟跳转，让动画播放完成
+  setTimeout(() => {
+    router.push('/drag-assemble');
+  }, 300);
 };
 
 onMounted(() => {
@@ -178,7 +194,7 @@ onUnmounted(() => {
 /* 返回按钮 */
 .back-button-wrapper {
   position: absolute;
-  top: 28px;
+  top: 78px;
   left: 32px;
   width: 24px;
   height: 24px;
@@ -432,6 +448,59 @@ onUnmounted(() => {
   height: 56px;
   object-fit: contain;
   animation: avatarAppear 1.5s ease-out 1.2s backwards;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 人物头像悬停效果 */
+.character-avatar:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* 人物头像点击波纹效果 */
+.character-avatar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.character-avatar:active::before {
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+}
+
+/* 点击时的脉冲动画 */
+@keyframes clickPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0.3), 0 0 0 20px rgba(255, 215, 0, 0.1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.character-avatar.clicked {
+  animation: clickPulse 0.6s ease-out;
 }
 
 /* 右下角星星 */

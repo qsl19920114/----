@@ -150,7 +150,7 @@ onUnmounted(() => {
   width: 39px;
   height: 39px;
   left: 20px;
-  top: 36px;
+  top: 78px;
   background-image: url('/assets/history/assets/a52970a3-cce8-48f2-a31f-4b64c497f093.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -173,7 +173,7 @@ onUnmounted(() => {
   height: 69px;
   box-sizing: border-box;
   position: absolute;
-  top: 0;
+  top: 40px;
   left: 28px;
   display: flex;
   justify-content: flex-start;

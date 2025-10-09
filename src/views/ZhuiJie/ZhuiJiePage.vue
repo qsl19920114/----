@@ -113,8 +113,8 @@ const handleNextClick = () => {
   // 保存缀结完成状态
   localStorage.setItem('zhuijieCompleted', 'true');
   
-  // 跳转到表演页面
-  router.push('/show-process');
+  // 跳转到音乐页面
+  router.push('/music');
 };
 
 onMounted(() => {
@@ -243,8 +243,8 @@ onUnmounted(() => {
 /* 标题"缀结" */
 .page-title {
   position: absolute;
-  top: 38px;
-  right: 79px;
+  top: 68px;
+  right: 9px;
   width: 50px;
   height: 137px;
   font-family: 'KingHwa_OldSong', 'KingHwa OldSong', serif;

@@ -11,7 +11,7 @@
           </div>
           
           <!-- 状态栏 -->
-          <div class="status-bar">
+          <div class="status-bar" style="top: -4px;">
             <div class="status-bar-content">
               <div class="status-bar-inner">
                 <!-- 时间 -->
