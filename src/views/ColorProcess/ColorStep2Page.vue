@@ -52,7 +52,6 @@
           src="/assets/ColorProcess/step2/assets/ed3d5cc6-9ec7-48dc-a251-a381e643ec2e.png" 
           alt="下一步按钮" 
           class="next-button"
-          @click="handleNextClick"
         />
       </div>
 
@@ -73,6 +72,7 @@
           src="/assets/ColorProcess/step2/assets/b1a81e98-9173-4357-8226-0c382fcd0334.png" 
           alt="颜料笔" 
           class="paint-brush"
+          @click="handleNextClick"
         />
         <img 
           src="/assets/ColorProcess/step2/assets/4ef169c0-34a6-4f5e-a399-65f81abda882.png" 
@@ -390,6 +390,18 @@ onUnmounted(() => {
   left: 29px;
   width: 87.3px;
   height: 100.11px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.paint-brush:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 12px rgba(160, 45, 24, 0.3));
+}
+
+.paint-brush:active {
+  transform: scale(0.95);
 }
 
 .decoration-1 {

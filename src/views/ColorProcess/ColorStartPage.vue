@@ -171,6 +171,7 @@ const handleBottleClick = (index) => {
 // 点击开始按钮
 const handleStartClick = () => {
   // TODO: 跳转到敷彩详情页或下一个流程
+  router.push('/color-paint');
   console.log('开始敷彩');
 };
 

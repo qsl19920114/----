@@ -233,6 +233,8 @@ const handleDragStart = (event, part, index, column) => {
   // 添加拖拽中的样式类到容器
   const container = document.querySelector('.drag-assemble-container');
   container.classList.add('dragging-active');
+  
+  console.log('🖱️ 鼠标拖拽开始:', part.name);
 };
 
 // 拖拽结束 - 移除悬浮特效
@@ -242,10 +244,13 @@ const handleDragEnd = (event, part) => {
   // 移除拖拽样式类
   const container = document.querySelector('.drag-assemble-container');
   container.classList.remove('dragging-active');
+  
+  console.log('🖱️ 鼠标拖拽结束:', part.name);
 };
 
 // 触摸开始 - 添加悬浮特效
 const handleTouchStart = (event, part, index, column) => {
+  event.preventDefault(); // 防止页面滚动
   touchedPart = { part, index, column };
   const touch = event.touches[0];
   const rect = event.target.getBoundingClientRect();
@@ -256,14 +261,16 @@ const handleTouchStart = (event, part, index, column) => {
   // 添加拖拽中的样式类
   const container = document.querySelector('.drag-assemble-container');
   container.classList.add('dragging-active');
+  
+  console.log('👆 触摸拖拽开始:', part.name);
 };
 
 // 触摸移动
 const handleTouchMove = (event) => {
-  event.preventDefault();
+  event.preventDefault(); // 防止页面滚动
 };
 
-// 触摸结束 - 检测是否在参考图范围内
+// 触摸结束 - 检测是否在参考图范围内，直接跳转
 const handleTouchEnd = (event) => {
   if (!touchedPart) return;
   
@@ -275,15 +282,28 @@ const handleTouchEnd = (event) => {
   const container = document.querySelector('.drag-assemble-container');
   container.classList.remove('dragging-active');
   
-  // 检查是否在参考图范围内（更精确的检测）
+  console.log('👆 触摸结束位置:', { 
+    x: touch.clientX, 
+    y: touch.clientY,
+    refRect: {
+      left: refRect.left,
+      right: refRect.right,
+      top: refRect.top,
+      bottom: refRect.bottom
+    }
+  });
+  
+  // 检查是否在参考图范围内
   if (
     touch.clientX >= refRect.left &&
     touch.clientX <= refRect.right &&
     touch.clientY >= refRect.top &&
     touch.clientY <= refRect.bottom
   ) {
-    placePart(touchedPart);
+    console.log('✅ 触摸命中参考图区域，准备跳转');
+    jumpToComplete(touchedPart);
   } else {
+    console.log('❌ 触摸未命中参考图区域');
     // 如果没放在范围内，恢复拖拽状态
     touchedPart.part.dragging = false;
   }
@@ -291,7 +311,7 @@ const handleTouchEnd = (event) => {
   touchedPart = null;
 };
 
-// 放置处理 - 检测是否在参考图范围内
+// 放置处理 - 检测是否在参考图范围内，直接跳转
 const handleDrop = (event) => {
   event.preventDefault();
   
@@ -305,6 +325,17 @@ const handleDrop = (event) => {
   const referenceImage = document.querySelector('.reference-image');
   const refRect = referenceImage.getBoundingClientRect();
   
+  console.log('🖱️ 鼠标放置位置:', { 
+    x: event.clientX, 
+    y: event.clientY,
+    refRect: {
+      left: refRect.left,
+      right: refRect.right,
+      top: refRect.top,
+      bottom: refRect.bottom
+    }
+  });
+  
   // 检查鼠标位置是否在参考图范围内
   if (
     event.clientX >= refRect.left &&
@@ -312,21 +343,25 @@ const handleDrop = (event) => {
     event.clientY >= refRect.top &&
     event.clientY <= refRect.bottom
   ) {
-    placePart(data);
+    console.log('✅ 鼠标命中参考图区域，准备跳转');
+    jumpToComplete(data);
+  } else {
+    console.log('❌ 鼠标未命中参考图区域');
+    // 如果没放在范围内，恢复拖拽状态
+    data.part.dragging = false;
   }
-  
-  // 清除拖拽状态
-  draggedItem.value = null;
 };
 
-// 放置部件 - 拖到参考图区域即跳转
-const placePart = (data) => {
-  const { part, index, column } = data;
+// 直接跳转到完成页面的函数
+const jumpToComplete = (data) => {
+  const { part } = data;
   
-  // 标记为已放置
+  console.log('🚀 开始跳转流程:', part.name);
+  
+  // 标记为已放置（虽然我们直接跳转，但保持数据一致性）
   part.placed = true;
   
-  // 添加到已放置列表，使用随机位置
+  // 显示简短的放置效果
   const randomX = Math.random() * 200 + 50;
   const randomY = Math.random() * 300 + 50;
   
@@ -343,10 +378,11 @@ const placePart = (data) => {
     }
   });
   
-  // 直接跳转到完成页面
+  // 立即跳转到完成页面
+  console.log('📱 执行页面跳转到 /drag-complete');
   setTimeout(() => {
     router.push('/drag-complete');
-  }, 300); // 短暂延迟以显示放置动画
+  }, 200); // 极短延迟以确保用户看到放置效果
 };
 
 // 检查所有部件是否都已放置
@@ -381,10 +417,28 @@ const showCompleteShape = () => {
 // 检查是否所有部件都已放置
 const isAllPartsPlaced = ref(false);
 
-
 onMounted(() => {
   updateTime();
   timeTimer = setInterval(updateTime, 60000);
+  
+  // 环境检测和调试信息
+  console.log('🔧 页面加载完成，环境检测:');
+  console.log('- 是否支持触摸:', 'ontouchstart' in window);
+  console.log('- 用户代理:', navigator.userAgent);
+  console.log('- 屏幕尺寸:', window.screen.width + 'x' + window.screen.height);
+  
+  // 检查元素层级
+  setTimeout(() => {
+    const dropZone = document.querySelector('.drop-zone');
+    const referenceImage = document.querySelector('.reference-image');
+    if (dropZone && referenceImage) {
+      const dropRect = dropZone.getBoundingClientRect();
+      const refRect = referenceImage.getBoundingClientRect();
+      console.log('📐 元素位置信息:');
+      console.log('- 拖放区域:', dropRect);
+      console.log('- 参考图区域:', refRect);
+    }
+  }, 1000);
 });
 
 onUnmounted(() => {
@@ -644,6 +698,24 @@ onUnmounted(() => {
   animation: zoneExpand 1.5s ease-in-out infinite;
 }
 
+/* 增强拖放区域的视觉提示 */
+
+
+/* 跳入动画 */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 /* 区域扩展动画 */
 @keyframes zoneExpand {
   0%, 100% {
@@ -661,17 +733,18 @@ onUnmounted(() => {
   height: 400.5px;
   left: 120px;
   opacity: 0.49;
-  pointer-events: none;
+  pointer-events: auto !important;
   z-index: 3;
   transition: all 0.4s ease;
 }
 
 /* 拖拽激活时参考图高亮 */
 .dragging-active .reference-image {
-  opacity: 0.8;
-  filter: drop-shadow(0 0 20px rgba(160, 45, 24, 0.6))
-          drop-shadow(0 0 40px rgba(255, 200, 100, 0.4));
-  animation: pulseGlow 1s ease-in-out infinite;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 25px rgba(160, 45, 24, 0.8))
+          drop-shadow(0 0 50px rgba(255, 200, 100, 0.6));
+  animation: pulseGlow 0.8s ease-in-out infinite;
+ 
 }
 
 /* 发光脉冲动画 */
@@ -877,6 +950,35 @@ onUnmounted(() => {
     transform: scale(1.2);
     opacity: 0.6;
   }
+}
+
+/* 拖拽激活时的全局效果 */
+.dragging-active {
+  cursor: grabbing !important;
+}
+
+.dragging-active * {
+  cursor: grabbing !important;
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .draggable-part {
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+  
+  .draggable-part:active {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* 确保参考图区域可以正确接收事件 */
+.drop-zone {
+  pointer-events: auto !important;
 }
 
 /* 淡入动画 */
